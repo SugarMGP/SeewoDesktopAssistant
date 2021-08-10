@@ -56,6 +56,14 @@
 
 </details>
 
+### 可能会有的联动
+
+先记在这里，等到时候看会不会实装。
+
+- magika☆madoka
+- muse dash
+- ?
+
 ## 开源许可证
 
 本软件依照 [GNU GPL 3.0](LICENSE) 许可证开源。

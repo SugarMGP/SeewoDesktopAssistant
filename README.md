@@ -9,7 +9,7 @@
 
 - .NET 5 ，用于开发与 Windows 系统交互的部分。
 - WPF ，用于实现大多数 UI 及其操作逻辑。
-- [osu!framework](https://github.com/ppy/osu-framework) ，用于实现部分需要复杂渲染的 UI（大多数是彩蛋）。~~这是一个游戏引擎，所以可以用来写游戏（）~~
+- [osu!framework](https://github.com/ppy/osu-framework) ，用于实现部分需要复杂渲染的 UI（大多数是彩蛋）。~~这是一个音游引擎，所以可以用来写____（）~~
 
 ## 主要功能特性
 

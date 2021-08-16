@@ -7,6 +7,10 @@
     <StartupObject>SDA.App</StartupObject>
     <Authors>zijing_233</Authors>
     <Company>GuWorks</Company>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>1.0.0.0</Version>
+    <Copyright>zijing_233</Copyright>
+    <Product>SeewoDesktopAssistant</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

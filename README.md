@@ -69,6 +69,8 @@
 本软件依照 [GNU GPL 3.0](LICENSE) 许可证开源。
 ## 参与开发
 
+要参与开发，您需要先安装 [License Header 扩展](https://marketplace.visualstudio.com/items?itemName=StefanWenig.LicenseHeaderManager)。
+
 您随时可以通过提交 issues 或 Pull Request 来为项目开发作出贡献。
 
 我们将会将贡献代码的开发者列入开发人员列表中。

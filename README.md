@@ -11,7 +11,7 @@
 
 - .NET 5 ，整个程序依赖该平台运作。
 - WPF ，用于实现大多数 UI 及其操作逻辑。
-- [AduSkin](https://github.com/aduskin/AduSkin) ，这个程序使用的 WPF 控件库。
+- [HandyControl](https://gitee.com/handyorg/HandyControl) ，这个程序使用的 WPF 控件库。
 - [osu!framework](https://github.com/ppy/osu-framework) ，用于实现部分需要复杂渲染的 UI（大多数是彩蛋）。~~这是一个音游引擎，所以可以用来写____（）~~
 
 ## 主要功能特性

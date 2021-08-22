@@ -22,10 +22,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" ShowInTaskbar="False" Topmost="True" WindowStyle="None" Background="#60b3e6ff" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="7,3" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>
     <Grid>
+        <Button Content="设置" Click="SettingsButton_Click" HorizontalAlignment="Left" Margin="48,400,0,0" VerticalAlignment="Top" />
+        <Button Content="关闭" Click="CloseButton_Click" HorizontalAlignment="Left" Margin="138,400,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

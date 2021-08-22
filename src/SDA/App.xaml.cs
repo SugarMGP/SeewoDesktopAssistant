@@ -14,12 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using SDA.UserInterfaces;
 using System.Windows;
 
 namespace SDA
@@ -29,5 +24,27 @@ namespace SDA
     /// </summary>
     public partial class App : Application
     {
+        private static bool isDebugMode;
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            foreach (string arg in e.Args)
+            {
+                if (arg == "--debug")
+                {
+                    isDebugMode = true;
+                }
+            }
+            new MainWindow().Show();
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            if (isDebugMode)
+            {
+                e.Handled = false;
+                return;
+            }
+        }
     }
 }

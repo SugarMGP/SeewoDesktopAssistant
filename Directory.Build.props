@@ -1,7 +1,0 @@
-﻿<Project>
-  <PropertyGroup>
-    <ApplicationManifest>$(MSBuildThisFileDirectory)app.manifest</ApplicationManifest>
-    <!-- 强制使用 C# 9.0 -->
-    <LangVersion>9.0</LangVersion>
-  </PropertyGroup>
-</Project>

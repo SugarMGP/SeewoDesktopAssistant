@@ -1,4 +1,6 @@
+
 # 这是一个正处于开发早期的项目，许多功能尚未实现或不能正常工作，请等待第一个正式版本发布后使用。
+
 # SeewoDesktopAssistant（SDA/希沃白板助手）
 
 正如其名，这是针对希沃白板(理论上也可以是其他与希沃白板类似的设备)设计的一个辅助软件，主要用来解决希沃白板上经常出现的一些问题以及方便维护人员操作，还附加了一些用在班级里的实用功能。
@@ -7,8 +9,9 @@
 
 ## 使用的主要框架/SDK
 
-- .NET 5 ，用于开发与 Windows 系统交互的部分。
+- .NET 5 ，整个程序依赖该平台运作。
 - WPF ，用于实现大多数 UI 及其操作逻辑。
+- [AduSkin](https://github.com/aduskin/AduSkin) ，这个程序使用的 WPF 控件库。
 - [osu!framework](https://github.com/ppy/osu-framework) ，用于实现部分需要复杂渲染的 UI（大多数是彩蛋）。~~这是一个音游引擎，所以可以用来写____（）~~
 
 ## 主要功能特性
@@ -67,6 +70,7 @@
 ## 开源许可证
 
 本软件依照 [GNU GPL 3.0](LICENSE) 许可证开源。
+
 ## 参与开发
 
 要参与开发，您需要先安装 [License Header 扩展](https://marketplace.visualstudio.com/items?itemName=StefanWenig.LicenseHeaderManager)。

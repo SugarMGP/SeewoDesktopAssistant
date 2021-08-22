@@ -21,4 +21,8 @@
     <None Include="..\..\SeewoDesktopAssistant.licenseheader" Link="SeewoDesktopAssistant.licenseheader" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AduSkin" Version="1.1.1.9" />
+  </ItemGroup>
+
 </Project>

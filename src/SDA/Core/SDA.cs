@@ -1,30 +1,53 @@
 ﻿using NLog;
 using System;
+using System.IO;
+using System.Reflection;
 
 namespace SDA.Core
 {
     public class SDA
     {
         private static SDA _instance;
-        private readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+        private string _logsDir;
 
         public static SDA Instance
         {
             get => _instance;
         }
 
-        private static void SetupLoggers()
+        private void SetupLoggers()
         {
+            _logsDir = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Logs");
+            if (!Directory.Exists(_logsDir))
+            {
+                Directory.CreateDirectory(_logsDir);
+            }
+            string date = DateTime.Today.ToString("yyyy_MM_dd");
+            string logFileName = Path.Combine(_logsDir, "SDA_" + date + "_");
+            string debugLogFileName = Path.Combine(_logsDir, "SDA_Debug_" + date + "_");
+            for (int i = 1; ; i++)
+            {
+                if (!File.Exists(logFileName + i + ".log") || !File.Exists(debugLogFileName + i + ".log"))
+                {
+                    logFileName += i;
+                    debugLogFileName += i;
+                    break;
+                }
+            }
+            logFileName += ".log";
+            debugLogFileName += ".log";
+
             NLog.Config.LoggingConfiguration config = new();
 
             // logger target
             NLog.Targets.FileTarget logFile = new("logfile")
             {
-                FileName = "SDA.log"
+                FileName = logFileName
             };
             NLog.Targets.FileTarget debugLogFile = new("debuglogfile")
             {
-                FileName = "SDA_Debug.log"
+                FileName = debugLogFileName
             };
 
             // logger rule
@@ -40,12 +63,12 @@ namespace SDA.Core
         /// </summary>
         public void Launch()
         {
-            SetupLoggers();
-            Logger.Info("Launching SeewoDesktopAssistant");
             if (_instance != null)
             {
                 throw new InvalidOperationException("Application is already launched!");
             }
+            SetupLoggers();
+            _logger.Info("Launching SeewoDesktopAssistant");
             _instance = this;
 
         }

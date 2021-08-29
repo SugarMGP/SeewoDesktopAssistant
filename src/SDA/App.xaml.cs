@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using SDA.UserInterfaces;
 using System.Windows;
 
 namespace SDA
@@ -30,12 +29,9 @@ namespace SDA
         {
             foreach (string arg in e.Args)
             {
-                if (arg == "--debug")
-                {
-                    isDebugMode = true;
-                }
+                isDebugMode = arg.Contains("--debug");
             }
-            new MainWindow().Show();
+            new Core.SDA().Launch();
         }
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
@@ -45,6 +41,11 @@ namespace SDA
                 e.Handled = false;
                 return;
             }
+        }
+
+        public static bool IsDebugMode()
+        {
+            return isDebugMode;
         }
     }
 }
